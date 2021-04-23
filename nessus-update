@@ -1,0 +1,11 @@
+#!/bin/bash
+
+logfile=/var/log/nessus-update.log
+
+#Nessus Info Written To Log File && Nessus Update Command
+echo -e "\n Nessus update" >> $logfile
+echo ""
+echo "Updating Nessus   Please Wait..."
+echo ""
+docker exec -i nessus /opt/nessus/sbin/nessuscli update --all | tee -a $logfile
+

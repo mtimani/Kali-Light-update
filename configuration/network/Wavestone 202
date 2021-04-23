@@ -1,0 +1,13 @@
+[connection]
+id=Wavestone 202
+uuid=e3f708a1-babf-4a5b-aa62-fe9d312b4a1b
+type=ethernet
+autoconnect=false
+
+[ipv6]
+method=auto
+
+[ipv4]
+method=manual
+dns=213.244.0.15;
+address1=212.99.114.202/26,212.99.114.193

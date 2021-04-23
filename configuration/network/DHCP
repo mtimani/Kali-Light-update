@@ -1,0 +1,11 @@
+[connection]
+id=DHCP
+uuid=3a9d5e2c-95f7-4430-bd75-cf0cb99273e6
+type=ethernet
+autoconnect=true
+
+[ipv6]
+method=auto
+
+[ipv4]
+method=auto

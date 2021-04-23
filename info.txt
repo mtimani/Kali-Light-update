@@ -1,0 +1,28 @@
+Problems :
+
+- Shutdown machine & reboot with autologin without physical intervention
+- Run Change-Temporary-Password script 
+
+Alternatives : 
+
+- Create a weekly duplicate VM that will execute the Temp Password script
+- Create a script that each user has to exeecute at first Startup
+	@ In this case the Main VM has to be without password & with autologin enabled
+		\ VM will be accessible to the Admin of the Proxmox Server and no one else
+
+To Do :
+
+- Dockerized Burp `run` command
+- Dockerized Burp update script
+- Decision between Burp & Dockerized Burp
+- Kali Lite & Kali Heavy scripts separation
+- Calculate Size of the VMs
+- Test different compression algorithms to determine the most optimal for VMDK and OVA formats
+
+Info :
+
+- When installing standard version with the normal software packages (medium)
+	@ Current Kali occupies : 24-25G
+	@ At install and update to latest version : 14G
+	@ VMDK Format : 13.8G
+	@ Compressed with LZMAA2 with Ultra Settings and max dictionnary size for 16G of RAM : 13.4G 

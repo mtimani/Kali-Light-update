@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#Launch docker
+docker start nessus
+echo "Connect to nessus on https://127.0.0.1:8834"
+su timani -c "firefox https://127.0.0.1:8834 &"

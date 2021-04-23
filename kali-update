@@ -1,0 +1,19 @@
+#/bin/bash
+
+clear
+
+#Local Variables Definition
+logfile=/var/log/kali-update.log
+dt=$(date '+%d/%m/%Y  %H:%M:%S')
+
+#Update Info Written Into Log File
+echo -e "\n\n\n$dt $USER Kali Update" >> $logfile
+echo ""
+echo "Updating Kali Linux   Please Wait..."
+echo ""
+
+#Kali Update Commands
+sudo apt-get update -y | tee -a $logfile
+sudo apt-get upgrade -y | tee -a $logfile
+sudo apt full-upgrade -y | tee -a $logfile
+sudo apt autoremove -y | tee -a $logfile

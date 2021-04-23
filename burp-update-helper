@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#Check the number of arguments
+if [[ $# -ne 1 ]]
+  then echo -e "Error! Script must have an argument!\nUsage: ./setup.sh non-root_username"
+  exit
+fi
+ 
+user=$1
+
+#Check if the user provided in the argument exists
+if ! id $user &>/dev/null
+  then echo "User not found! Enter a valid Username as an argument!"
+  echo "Usage: ./setup.sh non-root_username"
+  exit
+fi
+ 
+#Check that the user provided in the argument is not root
+if [ $user == 'root' ]
+  then echo "User must not be root ! Enter a valid Username as an argument!"
+  echo "Usage: ./setup.sh non-root_username"
+fi
+
+#Activate Venv
+source /burp-update-scripts/env/bin/activate
+
+#Setup Display
+export DISPLAY=:0.0
+
+#Add geckodriver to PATH
+export PATH=$PATH:/usr/bin/geckodriver
+
+#Launch update script
+cd /burp-update-scripts/
+python3 /burp-update-scripts/webscraper.py $user
+
+#Deactivate Venv
+deactivate
